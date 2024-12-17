@@ -45,13 +45,18 @@ all_maps = lst_combined()
 all_maps.sort()
 all_maps
 
-maps_dic = {}
 
-correct_imgs = os.listdir("corrected_imgs")
+#Loading in the assests
+base_path = os.path.abspath(os.path.dirname("corrected_imgs"))
+img_dir = os.path.join(base_path, 'corrected_imgs')
+sound_dir = os.path.join(base_path, 'Sounds and Music')
+main_dir =  os.path.join(base_path, "main_image")
+correct_imgs = os.listdir(img_dir) 
+maps_dic = {all_maps[j]: os.path.join(img_dir, correct_imgs[j]) for j in range(len(correct_imgs))}
+
+print(sound_dir)
 
 
-for j in range(len(correct_imgs)):
-    maps_dic[all_maps[j]] = "corrected_imgs" + "\\" + correct_imgs[j]
 
 #Fixing the Remastered 
     
@@ -289,14 +294,14 @@ def BO6():
 
 r.geometry("250x170")
 r.title('COD Zombies Map Roulette')
-img = PhotoImage(file='main_image\\96203.png')
+img = PhotoImage(file=f'{main_dir}\\96203.png')
 img1 = Label(r, image=img)
 img1.place(x=0,y=0)
 r.attributes('-fullscreen', True)
 
 #Background Music
 mixer.init()
-mixer.music.load("Sounds and Music\\Samantha's Lullaby.mp3")
+mixer.music.load(f"{sound_dir}\\Samantha's Lullaby.mp3")
 mixer.music.play(-1)
 
 
