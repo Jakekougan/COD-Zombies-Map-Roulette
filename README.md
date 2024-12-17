@@ -19,4 +19,11 @@ Libraries:
 * Tkinter  
 * OS  
 * Pygame
+* Sys
+
+  
+How to use:
+
+* Download the dist/ directory  
+* Run the file
 
