@@ -3,9 +3,7 @@ import random
 import tkinter as tk
 from tkinter import *
 import os
-from PIL import Image
 from pygame import mixer
-import cv2
 
 
 #Creating the Keys for the dictionary that will store our images as corresponding values 
@@ -298,7 +296,7 @@ r.attributes('-fullscreen', True)
 
 #Background Music
 mixer.init()
-mixer.music.load("Sounds and Music\Samantha's Lullaby.mp3")
+mixer.music.load("Sounds and Music\\Samantha's Lullaby.mp3")
 mixer.music.play(-1)
 
 
