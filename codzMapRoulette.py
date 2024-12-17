@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import *
 import os
 from pygame import mixer
+import sys
 
 
 #Creating the Keys for the dictionary that will store our images as corresponding values 
@@ -45,20 +46,21 @@ all_maps = lst_combined()
 all_maps.sort()
 all_maps
 
+# Determine the absolute path to the directory containing the executable 
+if hasattr(sys, '_MEIPASS'):
+     base_path = sys._MEIPASS 
+else: 
+    base_path = os.path.abspath(os.path.dirname(__file__))
+
 
 #Loading in the assests
-base_path = os.path.abspath(os.path.dirname("corrected_imgs"))
 img_dir = os.path.join(base_path, 'corrected_imgs')
 sound_dir = os.path.join(base_path, 'Sounds and Music')
 main_dir =  os.path.join(base_path, "main_image")
 correct_imgs = os.listdir(img_dir) 
 maps_dic = {all_maps[j]: os.path.join(img_dir, correct_imgs[j]) for j in range(len(correct_imgs))}
 
-print(sound_dir)
-
-
-
-#Fixing the Remastered 
+ 
     
 
 
@@ -294,14 +296,14 @@ def BO6():
 
 r.geometry("250x170")
 r.title('COD Zombies Map Roulette')
-img = PhotoImage(file=f'{main_dir}\\96203.png')
+img = PhotoImage(file=os.path.join(main_dir, "96203.png"))
 img1 = Label(r, image=img)
 img1.place(x=0,y=0)
 r.attributes('-fullscreen', True)
 
 #Background Music
 mixer.init()
-mixer.music.load(f"{sound_dir}\\Samantha's Lullaby.mp3")
+mixer.music.load(os.path.join(sound_dir, "Samantha's Lullaby.mp3"))
 mixer.music.play(-1)
 
 
