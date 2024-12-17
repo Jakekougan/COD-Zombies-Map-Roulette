@@ -299,6 +299,7 @@ r.attributes('-fullscreen', True)
 #Background Music
 mixer.init()
 mixer.music.load("Sounds and Music\Samantha's Lullaby.mp3")
+mixer.music.play(-1)
 
 
 
