@@ -24,6 +24,7 @@ Libraries:
   
 How to use:
 
-* Download the dist/ directory  
+* Download the raw codzMapRoulette.exe file from the executable folder
+* Say you want to keep file/mark it as safe
 * Run the file
 
