@@ -1,4 +1,4 @@
-#Import the useful modules 
+#Import the useful modules
 import random
 import tkinter as tk
 from tkinter import *
@@ -7,14 +7,15 @@ from pygame import mixer
 import sys
 
 
-#Creating the Keys for the dictionary that will store our images as corresponding values 
+
+#Creating the Keys for the dictionary that will store our images as corresponding values
 codz_dic = {}
 bo1_maps = ['Nacht Der Untoten', 'Verruckt', 'Shi No Numa', 'Der Riese', 'Kino Der Toten', 'Five', 'Ascension', 'Call of the Dead', 'Shangri-La', 'Moon']
 bo2_maps = ['Tranzit', 'Town', 'Bus Depot', 'Farm', 'Die Rise', 'Nuketown', 'Mob of the Dead', 'Buried', 'Origins']
 bo3_maps = ['Shadows of Evil', 'The Giant', 'Der Eisendrache', 'Zetsubou no Shima', 'Gorod Krovi', 'Revelations','Nacht Der Untoten(BO3)', 'Verruckt(BO3)', 'Shi no Numa(BO3)', 'Kino Der Toten(BO3)', 'Ascension(BO3)', 'Shangri-La(BO3)', 'Moon(BO3)', 'Origins(BO3)' ]
 bo4_maps = ['IX', 'Voyage of Despair', 'Blood of the Dead', 'Classified', 'Dead of the Night', 'Ancient Evil', 'Alpha Omega', 'Tag Der Toten']
 cw_maps = ['Die Machine', 'Firebase Z', 'Maur Der Toten', 'Forsaken']
-bo6_maps = ["Liberty Falls", "Terminus", "Citadelle des Morts"]
+bo6_maps = ["Liberty Falls", "Terminus", "Citadelle des Morts", "The Tomb"]
 
 #This is to help keep track of which games have certain maps
 codz_dic['Black Ops 1'] = bo1_maps
@@ -42,14 +43,14 @@ def lst_combined():
 all_maps = lst_combined()
 
 
-#Make it so the map names and map image files are both in alphabetically order for easier assignment 
+#Make it so the map names and map image files are both in alphabetically order for easier assignment
 all_maps.sort()
 all_maps
 
-# Determine the absolute path to the directory containing the executable 
+# Determine the absolute path to the directory containing the executable
 if hasattr(sys, '_MEIPASS'):
-     base_path = sys._MEIPASS 
-else: 
+     base_path = sys._MEIPASS
+else:
     base_path = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -57,22 +58,24 @@ else:
 img_dir = os.path.join(base_path, 'corrected_imgs')
 sound_dir = os.path.join(base_path, 'Sounds and Music')
 main_dir =  os.path.join(base_path, "main_image")
-correct_imgs = os.listdir(img_dir) 
+correct_imgs = os.listdir(img_dir)
 maps_dic = {all_maps[j]: os.path.join(img_dir, correct_imgs[j]) for j in range(len(correct_imgs))}
+print(maps_dic)
+print(all_maps)
 
- 
-    
+
+
 
 
 
 #Establishes root window in tkinter
 r = Tk()
-   
+
 #All Maps
 def map_roulette_ALL():
     map = random.choice(all_maps)
     map_img = maps_dic.get(map)
-    
+
     #Display
     top = Toplevel()
     top.geometry("180x85")
@@ -96,14 +99,14 @@ def map_roulette_ALL():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
-   
+
 def BO1():
     lsts = list(codz_dic.values())
     map = random.choice(lsts[0])
-   
+
 
     #Display
     top = Toplevel()
@@ -128,14 +131,14 @@ def BO1():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
 
 def BO2():
     lsts = list(codz_dic.values())
     map = random.choice(lsts[1])
-   
+
 
     #Display
     top = Toplevel()
@@ -160,14 +163,14 @@ def BO2():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
 
 def BO3():
     lsts = list(codz_dic.values())
     map = random.choice(lsts[2])
-   
+
 
     #Display
     top = Toplevel()
@@ -192,14 +195,14 @@ def BO3():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
-    
+
 def BO4():
     lsts = list(codz_dic.values())
     map = random.choice(lsts[3])
-   
+
 
     #Display
     top = Toplevel()
@@ -224,14 +227,14 @@ def BO4():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
 
 def BOCW():
     lsts = list(codz_dic.values())
     map = random.choice(lsts[4])
-   
+
 
     #Display
     top = Toplevel()
@@ -256,14 +259,14 @@ def BOCW():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
 
 def BO6():
     lsts = list(codz_dic.values())
     map = random.choice(lsts[5])
-   
+
 
     #Display
     top = Toplevel()
@@ -288,7 +291,7 @@ def BO6():
     label.pack()
     resultLabel.pack()
     closing_time.pack()
-    
+
 
     top.mainloop()
 
@@ -311,7 +314,7 @@ mixer.music.play(-1)
 scree_txt = 'Welcome to Map Roullette! Choose "ALL MAPS" to randomly choose a map from all games!\n\nChoose a specific game to get a random map from that game!\n'
 message = tk.Message(r, text=scree_txt)
 
-   
+
 
 button1 = Button(r, text='ALL MAPS', command=map_roulette_ALL)
 button2 = Button(r, text='Black Ops 1', command=BO1)
