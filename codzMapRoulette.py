@@ -189,4 +189,4 @@ r.mainloop()
 mixer.music.stop()
 
 #When building the executable run this command:
-# pyinstaller --onefile --add-data "corrected_imgs;corrected_imgs" --add-data "Sounds and Music;Sounds and Music" --icon=my_icon.ico your_script.py
+# pyinstaller --onefile --add-data "corrected_imgs;corrected_imgs" --add-data "Sounds and Music;Sounds and Music" --icon=icon.png codzMapRoulette.py
