@@ -11,7 +11,7 @@
 - Black Ops 3 (2015)  
 - Black Ops 4 (2018)  
 - Black Ops Cold War (2020)  
-- Black Ops 6 (2024) (Incomplete)
+- Black Ops 6 (2024)
 
 ## Libraries:
 
