@@ -15,7 +15,7 @@ bo2_maps = ['Tranzit', 'Town', 'Bus Depot', 'Farm', 'Die Rise', 'Nuketown', 'Mob
 bo3_maps = ['Shadows of Evil', 'The Giant', 'Der Eisendrache', 'Zetsubou no Shima', 'Gorod Krovi', 'Revelations','Nacht Der Untoten(BO3)', 'Verruckt(BO3)', 'Shi no Numa(BO3)', 'Kino Der Toten(BO3)', 'Ascension(BO3)', 'Shangri-La(BO3)', 'Moon(BO3)', 'Origins(BO3)' ]
 bo4_maps = ['IX', 'Voyage of Despair', 'Blood of the Dead', 'Classified', 'Dead of the Night', 'Ancient Evil', 'Alpha Omega', 'Tag Der Toten']
 cw_maps = ['Die Machine', 'Firebase Z', 'Maur Der Toten', 'Forsaken']
-bo6_maps = ["Liberty Falls", "Terminus", "Citadelle des Morts", "The Tomb"]
+bo6_maps = ["Liberty Falls", "Terminus", "Citadelle des Morts", "The Tomb", "Shattered Veil", "Reckoning"]
 
 #This is to help keep track of which games have certain maps
 codz_dic['Black Ops 1'] = bo1_maps
@@ -60,8 +60,6 @@ sound_dir = os.path.join(base_path, 'Sounds and Music')
 main_dir =  os.path.join(base_path, "main_image")
 correct_imgs = os.listdir(img_dir)
 maps_dic = {all_maps[j]: os.path.join(img_dir, correct_imgs[j]) for j in range(len(correct_imgs))}
-print(maps_dic)
-print(all_maps)
 
 
 
@@ -347,3 +345,6 @@ button_exit.pack(pady=75)
 
 r.mainloop()
 mixer.music.stop()
+
+#When building the executable run this command:
+# pyinstaller --onefile --add-data "corrected_imgs;corrected_imgs" --add-data "Sounds and Music;Sounds and Music" --icon=my_icon.ico your_script.py
