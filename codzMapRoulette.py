@@ -101,169 +101,11 @@ def map_roulette_ALL():
 
     top.mainloop()
 
-def BO1():
+
+
+def from_SingleGame(game):
     lsts = list(codz_dic.values())
-    map = random.choice(lsts[0])
-
-
-    #Display
-    top = Toplevel()
-    top.geometry("180x85")
-    top.title("Results")
-    top.attributes('-fullscreen', True)
-
-    map_img = maps_dic.get(map)
-    print(f"Selected map: {map}")
-    print(f"Selected Image: {map_img}")
-
-    if map_img is not None:
-        img = PhotoImage(file=map_img)
-        img_display = Label(top, image=img)
-        img_display.image = img_display
-        img_display.place(x=0, y=0)
-
-    label = Label(top, text="The map you've gotten is   ")
-    resultLabel = Label(top, text=map)
-    closing_time = Button(top, text="Close", command=top.destroy)
-
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
-
-
-    top.mainloop()
-
-def BO2():
-    lsts = list(codz_dic.values())
-    map = random.choice(lsts[1])
-
-
-    #Display
-    top = Toplevel()
-    top.geometry("180x85")
-    top.title("Results")
-    top.attributes('-fullscreen', True)
-
-    map_img = maps_dic.get(map)
-    print(f"Selected map: {map}")
-    print(f"Selected Image: {map_img}")
-
-    if map_img is not None:
-        img = PhotoImage(file=map_img)
-        img_display = Label(top, image=img)
-        img_display.image = img_display
-        img_display.place(x=0, y=0)
-
-    label = Label(top, text="The map you've gotten is   ")
-    resultLabel = Label(top, text=map)
-    closing_time = Button(top, text="Close", command=top.destroy)
-
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
-
-
-    top.mainloop()
-
-def BO3():
-    lsts = list(codz_dic.values())
-    map = random.choice(lsts[2])
-
-
-    #Display
-    top = Toplevel()
-    top.geometry("180x85")
-    top.title("Results")
-    top.attributes('-fullscreen', True)
-
-    map_img = maps_dic.get(map)
-    print(f"Selected map: {map}")
-    print(f"Selected Image: {map_img}")
-
-    if map_img is not None:
-        img = PhotoImage(file=map_img)
-        img_display = Label(top, image=img)
-        img_display.image = img_display
-        img_display.place(x=0, y=0)
-
-    label = Label(top, text="The map you've gotten is   ")
-    resultLabel = Label(top, text=map)
-    closing_time = Button(top, text="Close", command=top.destroy)
-
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
-
-
-    top.mainloop()
-
-def BO4():
-    lsts = list(codz_dic.values())
-    map = random.choice(lsts[3])
-
-
-    #Display
-    top = Toplevel()
-    top.geometry("180x85")
-    top.title("Results")
-    top.attributes('-fullscreen', True)
-
-    map_img = maps_dic.get(map)
-    print(f"Selected map: {map}")
-    print(f"Selected Image: {map_img}")
-
-    if map_img is not None:
-        img = PhotoImage(file=map_img)
-        img_display = Label(top, image=img)
-        img_display.image = img_display
-        img_display.place(x=0, y=0)
-
-    label = Label(top, text="The map you've gotten is   ")
-    resultLabel = Label(top, text=map)
-    closing_time = Button(top, text="Close", command=top.destroy)
-
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
-
-
-    top.mainloop()
-
-def BOCW():
-    lsts = list(codz_dic.values())
-    map = random.choice(lsts[4])
-
-
-    #Display
-    top = Toplevel()
-    top.geometry("180x85")
-    top.title("Results")
-    top.attributes('-fullscreen', True)
-
-    map_img = maps_dic.get(map)
-    print(f"Selected map: {map}")
-    print(f"Selected Image: {map_img}")
-
-    if map_img is not None:
-        img = PhotoImage(file=map_img)
-        img_display = Label(top, image=img)
-        img_display.image = img_display
-        img_display.place(x=0, y=0)
-
-    label = Label(top, text="The map you've gotten is   ")
-    resultLabel = Label(top, text=map)
-    closing_time = Button(top, text="Close", command=top.destroy)
-
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
-
-
-    top.mainloop()
-
-def BO6():
-    lsts = list(codz_dic.values())
-    map = random.choice(lsts[5])
+    map = random.choice(lsts[game])
 
 
     #Display
@@ -315,12 +157,12 @@ message = tk.Message(r, text=scree_txt)
 
 
 button1 = Button(r, text='ALL MAPS', command=map_roulette_ALL)
-button2 = Button(r, text='Black Ops 1', command=BO1)
-button3 = Button(r, text='Black Ops 2', command=BO2)
-button4 = Button(r, text='Black Ops 3', command=BO3)
-button5 = Button(r, text='Black Ops 4', command=BO4)
-button6 = Button(r, text='Black Ops Cold War', command=BOCW)
-button7 = Button(r, text='Black Ops 6', command=BO6)
+button2 = Button(r, text='Black Ops 1', command=lambda: from_SingleGame(0))
+button3 = Button(r, text='Black Ops 2', command=lambda: from_SingleGame(1))
+button4 = Button(r, text='Black Ops 3', command=lambda: from_SingleGame(2))
+button5 = Button(r, text='Black Ops 4', command=lambda: from_SingleGame(3))
+button6 = Button(r, text='Black Ops Cold War', command=lambda: from_SingleGame(4))
+button7 = Button(r, text='Black Ops 6', command=lambda: from_SingleGame(5))
 button_exit = Button(r, text= "Exit", command= r.destroy)
 
 
