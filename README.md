@@ -31,8 +31,9 @@
     3. Run the file
 
 - Using PyInstaller
-    1. Navigate to project root
-    2. run this command:
+    1. Install PyInstaller: pip install pyinstaller
+    2. Navigate to project root
+    3. run this command:
         - pyinstaller --onefile --add-data "corrected_imgs;corrected_imgs" --add-data "Sounds and Music;Sounds and Music" --icon=myicon.ico codzMapRoulette.py
 
 
