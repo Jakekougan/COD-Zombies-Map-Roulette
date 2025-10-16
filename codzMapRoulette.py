@@ -94,9 +94,9 @@ def map_roulette_ALL():
     resultLabel = Label(top, text=map)
     closing_time = Button(top, text="Close", command=top.destroy)
 
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
+    label.pack(pady=5)
+    resultLabel.pack(pady=5)
+    closing_time.pack(pady=5)
 
 
     top.mainloop()
@@ -128,9 +128,9 @@ def from_SingleGame(game):
     resultLabel = Label(top, text=map)
     closing_time = Button(top, text="Close", command=top.destroy)
 
-    label.pack()
-    resultLabel.pack()
-    closing_time.pack()
+    label.pack(pady=10)
+    resultLabel.pack(pady=10)
+    closing_time.pack(pady=10)
 
 
     top.mainloop()
